@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include "Input.h"
 #include "Command.h"
 #include "Utility.h"
@@ -15,8 +15,8 @@ using json = nlohmann::json;
 
 int main() {
     cout << "esty";
+    cout <<"hello world from Rachely"
     cout << "esty and racheli";
-
     Game game;
     game.handleUserInput();
     game._world();
