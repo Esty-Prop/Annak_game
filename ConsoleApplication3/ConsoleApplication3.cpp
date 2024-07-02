@@ -20,7 +20,7 @@ int main() {
    /* game._start();*/
     game._asserts();
     cout << game;
-
+    cout << "my try";
     
    // Input i;
    // i.parse_and_store();
