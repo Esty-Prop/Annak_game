@@ -21,7 +21,7 @@ int main() {
    /* game._start();*/
     game._asserts();
     cout << game;
-    cout << "my try";
+    cout << "my try 1";
     
    // Input i;
    // i.parse_and_store();
