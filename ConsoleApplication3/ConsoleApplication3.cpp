@@ -15,13 +15,15 @@ using json = nlohmann::json;
 
 int main() {
     cout << "esty";
+    cout << "esty and racheli";
+
     Game game;
     game.handleUserInput();
     game._world();
    /* game._start();*/
     game._asserts();
     cout << game;
-
+    cout << "my try 1";
     
    // Input i;
    // i.parse_and_store();
