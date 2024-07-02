@@ -14,6 +14,7 @@ using json = nlohmann::json;
 
 
 int main() {
+    cout << "esty";
     Game game;
     game.handleUserInput();
     game._world();
