@@ -15,6 +15,8 @@ using json = nlohmann::json;
 
 int main() {
     cout << "esty";
+    cout << "esty and racheli";
+
     Game game;
     game.handleUserInput();
     game._world();
