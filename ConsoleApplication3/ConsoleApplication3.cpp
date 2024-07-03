@@ -18,7 +18,7 @@ int main() {
     Game game;
     game.handleUserInput();
     game._world();
-   /* game._start();*/
+    game._start();
     game._asserts();
     cout << game;
     

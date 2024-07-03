@@ -12,7 +12,7 @@ using namespace std;
 class Cell
 {
 private:
-	string content;
+	string ground;
     shared_ptr<Block> blockPtr = nullptr;
 public:
     Cell() : blockPtr(nullptr) { }
