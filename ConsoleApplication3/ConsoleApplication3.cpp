@@ -22,4 +22,3 @@ int main() {
     //game._asserts();
     cout << game;
 };
-

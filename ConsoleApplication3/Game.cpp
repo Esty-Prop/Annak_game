@@ -9,7 +9,7 @@ void Game::_start()
      
 
     
-     if (cmd->name == Command::RESOURCES) {
+     if (cmd->name == Command::RESOURCE) {
          //Handle input 
          int amount = stoi(cmd->arguments[0]);
          string typeResource = cmd->arguments[1];
