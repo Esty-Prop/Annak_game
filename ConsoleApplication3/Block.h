@@ -14,10 +14,10 @@ protected:
     TypesBlock type;
 
 private:
-    //string typesBlock;
+    
     double* resources;
     string* resourcesType;
-    //int width, height;
+   /* int width, height;*/
 public:
     
     Block();

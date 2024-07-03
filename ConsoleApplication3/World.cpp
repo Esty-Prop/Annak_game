@@ -14,7 +14,7 @@ World::World(vector<int> typeTiles, int sizeX, int sizeY) {
 
     this->sizeX = sizeX;
     this->sizeY = sizeY;
-   
+
     //Read fron json config
     JsonHandler jsonHandler("config.json");
     json config = jsonHandler.read();
@@ -22,19 +22,19 @@ World::World(vector<int> typeTiles, int sizeX, int sizeY) {
     int height = (int)config["Sizes"]["Tile"][1];
     //Initalize grid wolrld
     grid = new Cell * [sizeY * height];
-    for (int i = 0; i < sizeY*height; i++)
+    for (int i = 0; i < sizeY * height; i++)
     {
-        grid[i] = new Cell[sizeX*width];
+        grid[i] = new Cell[sizeX * width];
     }
     //Initalize Tiles
     for (auto tile : typeTiles)
     {
         shared_ptr<Block> ptr(new Tile(tile));
         blocks.emplace_back(ptr);
-    } 
- 
+    }
+
     int blockIndex = 0;
-      
+
     for (int i = 0; i < sizeY; ++i) {
         for (int j = 0; j < sizeX; ++j) {
             for (int tileY = 0; tileY < height; ++tileY) {
@@ -44,11 +44,11 @@ World::World(vector<int> typeTiles, int sizeX, int sizeY) {
                     if (worldGridX < (sizeX * width) && worldGridY < sizeY * height) {
                         grid[worldGridY][worldGridX].setBlock(blocks[blockIndex]);
                     }
-                } 
+                }
             }
             ++blockIndex;
         }
-    } 
+    }
 
     if (config.contains("Tiles")) {
 
@@ -60,9 +60,8 @@ World::World(vector<int> typeTiles, int sizeX, int sizeY) {
     else {
         throw runtime_error("Missing 'Tiles' in the configuration file.");
     }
-    
-}
 
+}
 World::~World()
 {
     for (int i = 0; i < sizeY * 5; ++i) {
@@ -81,7 +80,7 @@ string World::getTileType(int locationX, int locationY)
 
 Tile* World::selectTile(int locationX, int locationY)
 {
-    return dynamic_cast<Tile*>(grid[locationY][locationX].getBlock().get());
+    return dynamic_cast<Tile*> (grid[locationY][locationX].getBlock().get());
 }
 
 

@@ -53,7 +53,6 @@ void Input::parse_and_store()
                 world->data.push_back(row);
 
 
-                //כאן צריך לשלוח למחלקת עולם
             }
             else {
                 auto command = parse_command(line);

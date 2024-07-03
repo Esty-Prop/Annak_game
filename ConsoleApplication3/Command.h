@@ -16,7 +16,7 @@ public:
     static const std::string START;
     static const std::string INPUT;
     static const std::string ASSERTS;
-
+    
     static const std::string WAIT;
 
     static const std::string SELECT;
@@ -33,6 +33,9 @@ public:
     static const std::string RAIN;
     static const std::string ROBBER;
     static const std::string MAKE_ROBBER;
+
+    static const int N_RESOURCES;
+
     friend std::ostream& operator<<(std::ostream& os, const Command& cmd);
 };
 

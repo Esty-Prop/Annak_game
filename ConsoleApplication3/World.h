@@ -23,8 +23,6 @@ private:
 	int sizeX, sizeY;
 	json jsonConfig;
 public:
-
-	//vector<vector<Tile>> tilesMat;
 	map<int, string> tileTypeMap;
 	World(vector<int> typeTiles, int sizex, int sizeY);
 	~World();
