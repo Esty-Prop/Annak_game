@@ -2,32 +2,40 @@
 
 void Game::_start()
 {
- auto start= (input->start);
- /*for (auto& c_ptr : start)
+ vector< shared_ptr<Command>> start= (input->start);
+
+ for (auto cmd : start)
  {
-     if (c_ptr->name == "Resource") {
-         int amount = stoi(c_ptr->arguments[0]);
-         string typeResource = c_ptr->arguments[1];
-         int locationX = stoi(c_ptr->arguments[2]);
-         int locationY = stoi(c_ptr->arguments[3]);
-         Tile tile = world->selectTile(locationX, locationY);
-         tile.increaseResources(amount, typeResource);
-         double* e= new double[4];
-          e=tile.getResourses();
-          output = "SelectedResource ";
-          std::ostringstream oss;
-          for (int i = 0; i < 4; i++) {
-              oss << e[i];
+     
+
+    
+     if (cmd->name == Command::RESOURCES) {
+         //Handle input 
+         int amount = stoi(cmd->arguments[0]);
+         string typeResource = cmd->arguments[1];
+         int locationX = stoi(cmd->arguments[2]);
+         int locationY = stoi(cmd->arguments[3]);
+
+         Tile* tile = world-> selectTile(locationX, locationY);
+         tile->increaseResources(amount, typeResource);
+         double* resourses = new double[Command::N_RESOURCES];
+         resourses = tile->getResourses();
+         //Set output
+         output = "SelectedResource ";
+         std::ostringstream oss;
+         for (int i = 0; i < 4; i++) {
+              oss << resourses[i];
               if (i < 3) {
                   oss << ' ';
               }
-          }
-          output += oss.str();
-         if (e != nullptr)
-             delete[] e;
-         
+         }
+
+         output += oss.str();
+          //Free memory alocation
+         if (resourses != nullptr)
+             delete[] resourses;
      }
- }*/
+ }
 }
 
 void Game::_world()

@@ -22,6 +22,9 @@ const std::string Command::MAKE_EMPTY = "MakeEmpty";
 const std::string Command::RAIN = "Rain";
 const std::string Command::ROBBER = "Robber";
 const std::string Command::MAKE_ROBBER = "MakeRobber";
+
+const int Command::N_RESOURCES = 4;
+
 ostream& operator<<(std::ostream& os, const Command& cmd)
 {
 

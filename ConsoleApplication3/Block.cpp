@@ -1,7 +1,7 @@
 #include "Block.h"
 #include "JsonHandler.h"
+#include "Command.h"
 
-#define N_RESOURCES 4;
 using namespace std;
 
 Block::Block()
@@ -14,19 +14,18 @@ Block::~Block()
 
 Block::Block(TypesBlock typesBlock)
 {
-    this->typesBlock = typesBlock;
+    
     this->type = typesBlock;
     
     //Read fron json config
     JsonHandler jsonHandler("config.json");
     json config = jsonHandler.read();
     //Set resources 
-    const int n = N_RESOURCES
-    resourcesType = new string[n];
-    resources = new double[n] {0};
+    resourcesType = new string[Command::N_RESOURCES];
+    resources = new double[Command::N_RESOURCES] {0};
 
     if (config.contains("ResourceTypes") && config["ResourceTypes"].is_array()) {
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < Command::N_RESOURCES; i++) {
             resourcesType[i] = config["ResourceTypes"][i];
         }
     }
@@ -60,9 +59,7 @@ string Block::getBlockType()
 
 void Block::increaseResources(double amount, string typeResource)
 {
-    const int n = N_RESOURCES;
-    
-        for (int i = 0; i < n; ++i) {
+        for (int i = 0; i < Command::N_RESOURCES; ++i) {
             if (resourcesType[i] == typeResource) {
                 resources[i] += amount;
                 return;
@@ -72,9 +69,8 @@ void Block::increaseResources(double amount, string typeResource)
 
 void Block::reduceResources(double amount, string typeResource)
 {
-    const int n = N_RESOURCES;
     
-        for (int i = 0; i < n; ++i) {
+        for (int i = 0; i < Command::N_RESOURCES; ++i) {
             if (resourcesType[i] == typeResource) {
                 resources[i] -= amount;
                 return;
