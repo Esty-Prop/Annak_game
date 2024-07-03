@@ -39,11 +39,7 @@ string Tile::getTypeTile()
 {
     return tileTypeMap[typeTile];
 }
-//string Tile::getTypeTile()
-//{
-//    return tileTypeMap[typeTile]; 
-//}
-//
+
 
 
 

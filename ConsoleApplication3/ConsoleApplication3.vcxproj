@@ -134,6 +134,8 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="JsonHandler.cpp" />
+    <ClCompile Include="Obj.cpp" />
+    <ClCompile Include="Person.cpp" />
     <ClCompile Include="Tile.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
@@ -145,6 +147,8 @@
     <ClInclude Include="Input.h" />
     <ClInclude Include="json.hpp" />
     <ClInclude Include="JsonHandler.h" />
+    <ClInclude Include="Obj.h" />
+    <ClInclude Include="Person.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="Utility.h" />
     <ClInclude Include="World.h" />

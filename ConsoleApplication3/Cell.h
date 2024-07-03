@@ -7,12 +7,13 @@
 #include "Tile.h"
 #include <iostream>
 #include "json.hpp"
-
+#include "Obj.h"
 using namespace std;
 class Cell
 {
 private:
-	string content;
+	Obj ground;
+    Obj aerial;
     shared_ptr<Block> blockPtr = nullptr;
 public:
     Cell() : blockPtr(nullptr) { }

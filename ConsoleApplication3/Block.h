@@ -5,7 +5,8 @@
 #include <iostream>
 #include "json.hpp"
 #include <string>
-
+#include "Person.h"
+#include "Obj.h"
 using namespace std;
 class Block
 {
@@ -17,6 +18,11 @@ private:
     
     double* resources;
     string* resourcesType;
+    vector<shared_ptr<Obj>> people;
+    vector<shared_ptr<Obj>> cars;
+    vector<shared_ptr<Obj>> trucks;
+    vector<shared_ptr<Obj>> helicopters;
+   
    /* int width, height;*/
 public:
     
