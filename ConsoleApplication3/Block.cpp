@@ -14,7 +14,7 @@ Block::~Block()
 
 Block::Block(TypesBlock typesBlock)
 {
-    this->typesBlock = typesBlock;
+    //this->typesBlock = typesBlock;
     this->type = typesBlock;
     
     //Read fron json config

@@ -9,25 +9,17 @@
 #include "World.h"
 #include "Tile.h"
 #include "Game.h"
+
 using namespace std;
 using json = nlohmann::json;
 
 
 int main() {
-<<<<<<< HEAD
-    cout << "esty";
-    cout << "esty and racheli";
-    cout << "hello world from Rachely";
-=======
-   
->>>>>>> master
     Game game;
     game.handleUserInput();
     game._world();
-   /* game._start();*/
-    game._asserts();
+    game._start();
+    //game._asserts();
     cout << game;
-    
-    
-}
+};
 

@@ -18,20 +18,20 @@ using json = nlohmann::json;
 class World
 {
 private:
-	Cell ** worldGrid;
+	Cell ** grid;
 	vector<shared_ptr<Block>> blocks;;
 	int sizeX, sizeY;
 	json jsonConfig;
 public:
 
-	vector<vector<Tile>> tilesMat;
+	//vector<vector<Tile>> tilesMat;
 	map<int, string> tileTypeMap;
 	World(vector<int> typeTiles, int sizex, int sizeY);
 	~World();
 	//vector<vector<Tile>> print();
 	//vector<int> printVector();
 	string getTileType(int locationX, int locationy);
-	//Tile& selectTile(int locationX, int locationY);
+	Tile* selectTile(int locationX, int locationY);
 };
 
 

@@ -2,18 +2,21 @@
 
 void Game::_start()
 {
- auto start= (input->start);
- /*for (auto& c_ptr : start)
+  auto start= (input->start);
+  Command::RESOURCES;
+ for (auto& c_ptr : start)
  {
-     if (c_ptr->name == "Resource") {
+
+     
+     /*if (c_ptr->name == "Resource") {
          int amount = stoi(c_ptr->arguments[0]);
          string typeResource = c_ptr->arguments[1];
          int locationX = stoi(c_ptr->arguments[2]);
          int locationY = stoi(c_ptr->arguments[3]);
-         Tile tile = world->selectTile(locationX, locationY);
-         tile.increaseResources(amount, typeResource);
+         Tile* tile = world->selectTile(locationX, locationY);
+         tile->increaseResources(amount, typeResource);
          double* e= new double[4];
-          e=tile.getResourses();
+          e=tile->getResourses();
           output = "SelectedResource ";
           std::ostringstream oss;
           for (int i = 0; i < 4; i++) {
@@ -26,8 +29,8 @@ void Game::_start()
          if (e != nullptr)
              delete[] e;
          
-     }
- }*/
+     }*/
+ }
 }
 
 void Game::_world()
