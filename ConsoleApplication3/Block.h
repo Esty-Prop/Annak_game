@@ -18,7 +18,7 @@ private:
     
     double* resources;
     string* resourcesType;
-    vector<shared_ptr<Obj>> people;
+    vector<shared_ptr<Person>> people;
     vector<shared_ptr<Obj>> cars;
     vector<shared_ptr<Obj>> trucks;
     vector<shared_ptr<Obj>> helicopters;
@@ -33,6 +33,7 @@ public:
     virtual  void increaseResources(double amount, string typeResource);
     virtual  void reduceResources(double amount, string typeResource);
     virtual  double* getResourses();
+    void addPerson(shared_ptr<Person> person);
 
     
 

@@ -82,6 +82,19 @@ Tile* World::selectTile(int locationX, int locationY)
 {
     return dynamic_cast<Tile*> (grid[locationY][locationX].getBlock().get());
 }
+Block* World::selectBlock(int locationX, int locationY)
+{
+    return grid[locationY][locationX].getBlock().get();
+}
+
+void World::addPerson(int locationX, int locationY)
+{
+    shared_ptr<Person> personPtr(new Person());
+    grid[locationY][locationX].setGround(personPtr);
+    Block * currentBlock = selectBlock(locationX, locationY);
+    currentBlock->addPerson(personPtr);
+
+}
 
 
 

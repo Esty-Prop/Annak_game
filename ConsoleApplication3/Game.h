@@ -16,7 +16,7 @@ class Game
 {
 private:
 	Input* input;
-	World* world;
+    World* world;
 	string output="";
 
 public:

@@ -132,6 +132,7 @@
     <ClCompile Include="Command.cpp" />
     <ClCompile Include="ConsoleApplication3.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameUtility.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="JsonHandler.cpp" />
     <ClCompile Include="Obj.cpp" />
@@ -144,6 +145,7 @@
     <ClInclude Include="Cell.h" />
     <ClInclude Include="Command.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameUtility.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="json.hpp" />
     <ClInclude Include="JsonHandler.h" />

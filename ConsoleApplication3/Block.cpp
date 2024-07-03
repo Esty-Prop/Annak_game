@@ -44,6 +44,11 @@ double* Block::getResourses()
     return resources;
 }
 
+void Block::addPerson(shared_ptr<Person> person)
+{
+    people.emplace_back(person);
+}
+
 
 
 string Block::getBlockType()
