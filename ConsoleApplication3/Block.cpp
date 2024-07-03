@@ -12,16 +12,17 @@ Block::~Block()
 {
 }
 
-Block::Block(string typesBlock)
+Block::Block(TypesBlock typesBlock)
 {
     this->typesBlock = typesBlock;
-   
+    this->type = typesBlock;
+    
     //Read fron json config
     JsonHandler jsonHandler("config.json");
     json config = jsonHandler.read();
-  //Set resources 
-     const int n = N_RESOURCES
-        resourcesType = new string[n];
+    //Set resources 
+    const int n = N_RESOURCES
+    resourcesType = new string[n];
     resources = new double[n] {0};
 
     if (config.contains("ResourceTypes") && config["ResourceTypes"].is_array()) {
@@ -48,14 +49,13 @@ double* Block::getResourses()
 
 string Block::getBlockType()
 {
-   /* switch (type) {
-            case Tile: return "Tile";
-            case City: return "City";
-            case Village: return "Village";
-            case Road: return "Road";
+    switch (type) {
+            case TILE: return "Tile";
+            case CITY: return "City";
+            case VILLAGE: return "Village";
+            case ROAD: return "Road";
             default: return "Unknown";
-            }*/
-    return typesBlock;
+            }
 }
 
 void Block::increaseResources(double amount, string typeResource)
