@@ -5,7 +5,7 @@
 #include "JsonHandler.h"
 #include "Block.h"
 
-#define N_RESOURCES 4;
+//#define N_RESOURCES 4;
 using namespace std;
 
 
@@ -17,8 +17,10 @@ Tile::Tile(int typeTile) :Block(TILE) {
     //Read fron json config
     JsonHandler jsonHandler("config.json");
     json config = jsonHandler.read();
+
     int width = (int)config["Sizes"]["Tile"][0];
     int height = (int)config["Sizes"]["Tile"][1];
+
     if (config.contains("Tiles")) {
 
         for (auto& tile : config["Tiles"].items()) {
