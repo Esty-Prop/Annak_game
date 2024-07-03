@@ -10,7 +10,7 @@ using namespace std;
 
 
 
-Tile::Tile(int typeTile) :Block("Tile") {
+Tile::Tile(int typeTile) :Block(TILE) {
     /*enum TypesBlock { Tile, City, Village, Road };
     TypesBlock type;*/
     this->typeTile = typeTile;
