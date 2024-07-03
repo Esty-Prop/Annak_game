@@ -15,14 +15,12 @@ private:
 	string content;
     shared_ptr<Block> blockPtr = nullptr;
 public:
-    Cell() : blockPtr(nullptr) {
-    
-    
-    }
+    Cell() : blockPtr(nullptr) { }
    
     void setBlock(shared_ptr<Block>  block) {
         blockPtr = block;
     }
+
     shared_ptr<Block> getBlock() const {
         if (blockPtr != nullptr) {
             return blockPtr;

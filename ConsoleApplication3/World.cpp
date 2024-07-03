@@ -27,7 +27,7 @@ World::World(vector<int> typeTiles, int sizeX, int sizeY) {
     {
         worldGrid[i] = new Cell[15];
     }
-
+    //Initalize Tiles
     for (auto tile : typeTiles)
     {
         shared_ptr<Block> ptr(new Tile(tile));
@@ -43,20 +43,14 @@ World::World(vector<int> typeTiles, int sizeX, int sizeY) {
                     int worldGridX = j * 5 + tileX;
                     int worldGridY = i * 5 + tileY;
                     if (worldGridX < (sizeX * 5) && worldGridY < sizeY * 5) {
-
                         worldGrid[worldGridY][worldGridX].setBlock(blocks[blockIndex]);
-                        /*auto a = dynamic_cast<Tile*> (worldGrid[worldGridY][worldGridX].getBlock().get());
-                        cout << a->getTypeTile();*/
-
                     }
                 } 
-
             }
             ++blockIndex;
-        
-
         }
     } 
+
     if (config.contains("Tiles")) {
 
         for (auto& tile : config["Tiles"].items()) {
