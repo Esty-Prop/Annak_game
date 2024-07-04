@@ -64,6 +64,7 @@ void Game::_input()
 
 		}
 		else if (cmd->name == Command::WAIT) {
+
 			for (auto f : progressFuncs) {
 				f();
 			}
