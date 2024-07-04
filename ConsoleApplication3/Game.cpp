@@ -48,19 +48,18 @@ void Game::_input()
 	const auto& commands = input->steps;
 	for (auto cmd : commands) {
 		if (cmd->name == Command::SELECT) {
-			int locationX = stoi((input->steps)[0]->arguments[0]);
-			int locationY = stoi((input->steps)[0]->arguments[1]);
+			int locationX = stoi(cmd->arguments[0]);
+			int locationY = stoi(cmd->arguments[1]);
 			selectedCell = world->selectCell(locationX, locationY);
 		}
 		else if (cmd->name == Command::WORK) {
-
+			int locationX = stoi(cmd->arguments[0]);
+			int locationY = stoi(cmd->arguments[1]);
 			//Person* p = static_cast<Person*>(selectedCell.getGround().get());
 			function<void()> work;
-			work = [=]() -> void {
-				//p->work();
-				GameUtility::work(selectedCell);
-				};
-
+			
+			work = bind(GameUtility::work, world->selectCell(locationY, locationX));
+			
 			progressFuncs.emplace_back(work);
 
 		}
@@ -86,7 +85,7 @@ void Game::_asserts()
 			double* resourses = new double[Command::N_RESOURCES];
 			resourses = selectedCell.getBlock()->getResourses();
 			//Set output
-			output = "SelectedResource ";
+			output = "SelectedResource";
 			std::ostringstream oss;
 			for (int i = 0; i < Command::N_RESOURCES; i++) {
 				oss << resourses[i];

@@ -71,8 +71,10 @@ void Block::increaseResources(double amount, int typeResource)
 void Block::reduceResources(double amount, int typeResource)
 {
 
-    if (resources[typeResource] - amount >= 0)
+    if (resources[typeResource] - amount > 0) {
         resources[typeResource] -= amount;
+    }
+    
     else
         resources[typeResource] = 0;
 
