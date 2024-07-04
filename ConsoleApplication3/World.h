@@ -28,10 +28,12 @@ public:
 	~World();
 	//vector<vector<Tile>> print();
 	//vector<int> printVector();
-	string getTileType(int locationX, int locationy);
+	 string getTileType( Cell& cell);
      Tile* selectTile(int locationX, int locationY);
 	 void addPerson(int locationX, int locationY);
 	 Block* selectBlock(int locationX, int locationY);
+	 Cell& selectCell(int locationX, int locationY);
+
 
 };
 

@@ -7,6 +7,7 @@
 #include <string>
 #include "Person.h"
 #include "Obj.h"
+
 using namespace std;
 class Block
 {
@@ -30,10 +31,13 @@ public:
     virtual ~Block();
     Block(TypesBlock typesBlock);
     virtual  string getBlockType();
+    virtual  void increaseResources(double amount, int typeResource);
+    virtual  void reduceResources(double amount, int typeResource);
     virtual  void increaseResources(double amount, string typeResource);
     virtual  void reduceResources(double amount, string typeResource);
     virtual  double* getResourses();
     void addPerson(shared_ptr<Person> person);
+    void workPeple(int time);
 
     
 

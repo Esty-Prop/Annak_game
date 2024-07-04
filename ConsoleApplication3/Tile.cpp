@@ -3,7 +3,7 @@
 #include <vector>
 #include "Tile.h"
 #include "JsonHandler.h"
-#include "Block.h"
+//#include "Block.h"
 
 //#define N_RESOURCES 4;
 using namespace std;
@@ -11,8 +11,7 @@ using namespace std;
 
 
 Tile::Tile(int typeTile) :Block(TILE) {
-    /*enum TypesBlock { Tile, City, Village, Road };
-    TypesBlock type;*/
+
     this->typeTile = typeTile;
     //Read fron json config
     JsonHandler jsonHandler("config.json");
@@ -31,7 +30,26 @@ Tile::Tile(int typeTile) :Block(TILE) {
     else {
         throw runtime_error("Missing 'Tiles' in the configuration file.");
     }
-    /*Block ::Block("Tile", width, height);*/
+
+    switch (typeTile)
+    {
+    case(3): {
+        resourceIndex = 0;
+        break;
+    }
+    case(4): {
+        resourceIndex = 1;
+        break;
+    }
+    case(5): {
+        resourceIndex = 2;
+        break;
+    }
+    case(6): {
+        resourceIndex = 3;
+        break;
+    }
+    }
 
 }
 

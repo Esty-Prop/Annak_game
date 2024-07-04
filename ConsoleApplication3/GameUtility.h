@@ -1,7 +1,9 @@
 #pragma once
-class GameUtility
+#include "Cell.h"
+class GameUtility 
 {
-	
+public:
+	static void work(Cell& cell);
 
 };
 

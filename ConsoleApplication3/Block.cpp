@@ -35,10 +35,6 @@ Block::Block(TypesBlock typesBlock)
 }
 
 
-
-
-
-
 double* Block::getResourses()
 {
     return resources;
@@ -47,6 +43,11 @@ double* Block::getResourses()
 void Block::addPerson(shared_ptr<Person> person)
 {
     people.emplace_back(person);
+}
+
+void Block::workPeple(int time)
+{
+
 }
 
 
@@ -62,23 +63,38 @@ string Block::getBlockType()
             }
 }
 
+void Block::increaseResources(double amount, int typeResource)
+{
+    resources[typeResource] += amount;
+}
+
+void Block::reduceResources(double amount, int typeResource)
+{
+
+    if (resources[typeResource] - amount >= 0)
+        resources[typeResource] -= amount;
+    else
+        resources[typeResource] = 0;
+
+}
+
 void Block::increaseResources(double amount, string typeResource)
 {
-        for (int i = 0; i < Command::N_RESOURCES; ++i) {
-            if (resourcesType[i] == typeResource) {
-                resources[i] += amount;
-                return;
-            }
+    for (int i = 0; i < Command::N_RESOURCES; ++i) {
+        if (resourcesType[i] == typeResource) {
+            resources[i] += amount;
+            return;
         }
+    }
 }
 
 void Block::reduceResources(double amount, string typeResource)
 {
-    
-        for (int i = 0; i < Command::N_RESOURCES; ++i) {
-            if (resourcesType[i] == typeResource) {
-                resources[i] -= amount;
-                return;
-            }
+
+    for (int i = 0; i < Command::N_RESOURCES; ++i) {
+        if (resourcesType[i] == typeResource) {
+            resources[i] -= amount;
+            return;
         }
+    }
 }

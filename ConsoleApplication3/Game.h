@@ -11,12 +11,16 @@
 #include "Tile.h"
 using namespace std;
 using json = nlohmann::json;
+typedef void (*voidFuncPtr)();
 
 class Game
 {
 private:
 	Input* input;
     World* world;
+	Cell selectedCell;
+	vector<function<void()>> progressFuncs;
+
 	string output="";
 
 public:
@@ -29,6 +33,7 @@ public:
 	void handleUserInput();
 	friend std::ostream& operator<<(std::ostream& os, const Game& game);
 	~Game();
+	friend class GameUtility;
 
 };
 

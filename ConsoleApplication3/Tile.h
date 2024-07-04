@@ -12,11 +12,10 @@ class Tile :
 public:
     int typeTile;
     unordered_map<int, string> tileTypeMap;
+    int resourceIndex;
 
     Tile(int base = 1);
     string getTypeTile();
-    
-
     ~Tile();
 
 

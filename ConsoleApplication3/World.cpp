@@ -6,7 +6,7 @@
 #include <vector>
 #include "JsonHandler.h"
 
-#define BUFFER 1;
+#define BUFFER 1
 using namespace std;
 using json = nlohmann::json;
 
@@ -70,11 +70,11 @@ World::~World()
     delete[] grid;
 }
 
-string World::getTileType(int locationX, int locationY)
+
+
+string World::getTileType( Cell& cell)
 {
-    locationX -= BUFFER;
-    locationY -= BUFFER;
-    auto a = dynamic_cast<Tile*> (grid[locationY][locationX].getBlock().get());
+    auto a = dynamic_cast<Tile*> (cell.getBlock().get());
     return a->getTypeTile();
 }
 
@@ -89,6 +89,8 @@ Block* World::selectBlock(int locationX, int locationY)
 
 void World::addPerson(int locationX, int locationY)
 {
+    locationX -= BUFFER;
+    locationY -= BUFFER;
     shared_ptr<Person> personPtr(new Person());
     grid[locationY][locationX].setGround(personPtr);
     Block * currentBlock = selectBlock(locationX, locationY);
@@ -96,6 +98,12 @@ void World::addPerson(int locationX, int locationY)
 
 }
 
+Cell& World::selectCell(int locationX, int locationY) {
+    locationX -= BUFFER;
+    locationY -= BUFFER;
+
+    return (grid[locationY][locationX]);
+}
 
 
 
