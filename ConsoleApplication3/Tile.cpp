@@ -48,7 +48,7 @@ Tile::Tile(int typeTile) :Block(TILE) {
     case(6): {
         resourceIndex = 3;
         break;
-    }
+    } default: resourceIndex = -1;
     }
 
 }

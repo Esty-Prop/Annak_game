@@ -58,7 +58,7 @@ void Game::_input()
 			//Person* p = static_cast<Person*>(selectedCell.getGround().get());
 			function<void()> work;
 			
-			work = bind(GameUtility::work, world->selectCell(locationY, locationX));
+			work = bind(GameUtility::work, world->selectCell(locationX, locationY));
 			
 			progressFuncs.emplace_back(work);
 
