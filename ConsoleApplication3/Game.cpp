@@ -85,7 +85,7 @@ void Game::_asserts()
 			double* resourses = new double[Command::N_RESOURCES];
 			resourses = selectedCell.getBlock()->getResourses();
 			//Set output
-			output = "SelectedResource";
+			output = "SelectedResource  ";
 			std::ostringstream oss;
 			for (int i = 0; i < Command::N_RESOURCES; i++) {
 				oss << resourses[i];
