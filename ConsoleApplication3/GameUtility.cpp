@@ -12,12 +12,10 @@ using json = nlohmann::json;
 	tile->reduceResources(WORK_REDUCE,tile->resourceIndex);
 }
 
- void GameUtility::rain(int amountRain)
+ void GameUtility::rain(int amountRain, World* world)
  {
-     //Read fron json config
-     JsonHandler jsonHandler("config.json");
-     json config = jsonHandler.read();
-     int rainWood = (int)config["Rains"]["Wood"];
-     int rainWool = (int)config["Rains"]["Wool"];
 
+	 world->rain(amountRain);
  }
+ //int GameUtility::amountRainWood = 0;
+ //int GameUtility::amountRainWool = 0;

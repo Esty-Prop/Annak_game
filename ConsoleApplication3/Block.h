@@ -12,8 +12,8 @@ using namespace std;
 class Block
 {
 protected:
-    enum TypesBlock { TILE = 0, CITY, VILLAGE, ROAD };
-    TypesBlock type;
+    /*enum TypesBlock { TILE = 0, CITY, VILLAGE, ROAD };
+    TypesBlock type;*/
 
 private:
     
@@ -26,7 +26,8 @@ private:
    
    /* int width, height;*/
 public:
-    
+    enum TypesBlock { TILE = 0, CITY, VILLAGE, ROAD };
+    TypesBlock type;
     Block();
     virtual ~Block();
     Block(TypesBlock typesBlock);

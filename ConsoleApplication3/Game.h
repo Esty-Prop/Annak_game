@@ -20,7 +20,7 @@ private:
     World* world;
 	Cell selectedCell;
 	vector<function<void()>> progressFuncs;
-
+	int amountRain=0;
 	string output="";
 
 public:

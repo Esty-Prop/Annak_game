@@ -105,6 +105,21 @@ Cell& World::selectCell(int locationX, int locationY) {
     return (grid[locationY][locationX]);
 }
 
+void World::rain(int rainAmount)
+{
+    for (auto block : blocks) {
+        //if (block.get()->type == 'TILE') {
+            Tile* tile=dynamic_cast<Tile*>(block.get());
+            if (tile->typeTile == 3 && rainAmount>=2000) {
+                tile->increaseResources(1, 0);
+            }
+            else if (tile->typeTile == 4 && rainAmount >= 1000) {
+                tile->increaseResources(1, 1);
+            }
+        //}
+    }
+}
+
 
 
 

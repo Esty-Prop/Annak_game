@@ -33,7 +33,7 @@ public:
 	 void addPerson(int locationX, int locationY);
 	 Block* selectBlock(int locationX, int locationY);
 	 Cell& selectCell(int locationX, int locationY);
-
+	 void rain(int rainAmount);
 
 };
 

@@ -63,8 +63,18 @@ void Game::_input()
 			progressFuncs.emplace_back(work);
 
 		}
+		else if (cmd->name == Command::RAIN) {
+			amountRain = stoi(cmd->arguments[0]);
+			
+		}
 		else if (cmd->name == Command::WAIT) {
+			if (amountRain > 0 && stoi(cmd->arguments[0]) >= amountRain  ) {
+				function<void()> rain;
 
+				rain = bind(GameUtility::rain, amountRain, world);
+
+				progressFuncs.emplace_back(rain);
+			}
 			for (auto f : progressFuncs) {
 				f();
 			}
